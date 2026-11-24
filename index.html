@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La teva telefonista digital — parla com una persona, reserva sola — SolutionPartner.AI</title>
+<link rel="icon" type="image/png" href="logo.png">
+<style>
+:root{--bg:#0b1d32;--bg2:#14243a;--bg3:#1b2e4d;--ink:#14243a;--gold:#e7c47d;--line:#c9d4e0;--red:#b91c1c;}
+*{box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#eef1f7;color:var(--ink);margin:0;line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+.hero{background:linear-gradient(135deg,#0b1d32,#14243a 55%,#1b2e4d);color:#fff;padding:56px 24px 64px;position:relative;overflow:hidden;}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(231,196,125,.22),transparent 65%);}
+.wrap{max-width:1080px;margin:0 auto;position:relative;z-index:2;}
+.brand{display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:34px;}
+.brand img{height:56px;width:auto;}
+.brand .nm{font-weight:600;letter-spacing:.08em;font-size:1.05rem;}
+.brand .nm span{color:var(--gold);}
+.badge{display:inline-block;background:var(--gold);color:var(--bg);font-weight:800;font-size:.72rem;padding:5px 14px;border-radius:24px;letter-spacing:.05em;margin-bottom:20px;}
+.hero h1{font-size:clamp(1.9rem,4.6vw,3.4rem);font-weight:900;line-height:1.08;margin:.2em auto;letter-spacing:-.01em;max-width:920px;}
+.hero h1 .hl{color:var(--gold);}
+.hero p.lead{font-size:clamp(1rem,1.6vw,1.25rem);color:rgba(255,255,255,.86);max-width:780px;margin:20px auto 8px;}
+.hero p.num{margin-top:0;}
+.hero .num b{color:var(--gold);font-size:clamp(1.1rem,2vw,1.4rem);}
+.cta-bar{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap;}
+.btn{background:var(--gold);color:var(--bg);padding:15px 34px;font-weight:800;font-size:1.05rem;border-radius:12px;display:inline-block;box-shadow:0 8px 24px rgba(231,196,125,.30);transition:transform .12s;}
+.btn:hover{transform:translateY(-2px);}
+.btn2{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3);padding:15px 30px;font-weight:700;font-size:1rem;border-radius:12px;}
+.pain{background:#fff;padding:56px 24px;border-bottom:1px solid var(--line);}
+.pain .sec-t{color:var(--red);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;font-weight:800;text-align:center;}
+.pain h2{font-size:clamp(1.5rem,3vw,2.3rem);text-align:center;margin:.3em auto .6em;color:var(--bg);max-width:840px;}
+.pain-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1080px;margin:30px auto 0;}
+.pcard{background:#fafcff;border:1px solid var(--line);border-radius:16px;padding:26px;}
+.pcard .ic{width:46px;height:46px;border-radius:12px;background:#fdeaea;color:var(--red);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;margin-bottom:14px;}
+.pcard h3{font-size:1.08rem;color:var(--bg);margin:0 0 8px;}
+.pcard .loss{color:var(--red);font-weight:900;font-size:1.5rem;margin:6px 0;}
+.pcard p{color:#4a5a72;font-size:.9rem;margin:0;}
+.sol{background:linear-gradient(135deg,#0b1d32,#1b2e4d);color:#fff;padding:60px 24px;}
+.sol .sec-t{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;font-weight:800;text-align:center;}
+.sol h2{font-size:clamp(1.5rem,3vw,2.3rem);text-align:center;margin:.3em auto .4em;max-width:820px;}
+.sol .lead{text-align:center;color:rgba(255,255,255,.85);max-width:760px;margin:0 auto 36px;font-size:1.05rem;}
+/* simulador de trucada */
+.callbox{max-width:640px;margin:0 auto 40px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:26px;}
+.callbox .phone{display:flex;align-items:center;gap:16px;margin-bottom:14px;}
+.callbox .pico{width:52px;height:52px;border-radius:50%;background:var(--gold);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900;flex:0 0 52px;}
+.callbox .ptit{font-weight:800;font-size:1.1rem;}
+.callbox .pst{color:rgba(255,255,255,.7);font-size:.85rem;}
+.msg{background:rgba(255,255,255,.1);border-radius:12px;padding:12px 16px;margin:8px 0;font-size:.95rem;max-width:90%;}
+.msg.client{background:var(--gold);color:var(--bg);margin-left:auto;font-weight:600;}
+.playbtn{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:18px;background:var(--gold);color:var(--bg);border:none;border-radius:10px;padding:13px;font-weight:800;font-size:.98rem;cursor:pointer;width:100%;}
+.playbtn small{font-weight:600;opacity:.8;}
+.sol .hint{text-align:center;color:rgba(255,255,255,.55);font-size:.8rem;margin-top:10px;}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;max-width:1080px;margin:0 auto;}
+.step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:24px;}
+.step .n{width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--bg);display:flex;align-items:center;justify-content:center;font-weight:900;margin-bottom:14px;font-size:1.1rem;}
+.step h3{font-size:1rem;margin:0 0 8px;color:#fff;}
+.step p{color:rgba(255,255,255,.75);font-size:.9rem;margin:0;}
+/* CVB — Característiques / Avantatges / Beneficis */
+.cvb{background:#fff;padding:60px 24px;}
+.cvb .sec-t{color:var(--bg);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;font-weight:800;text-align:center;}
+.cvb h2{font-size:clamp(1.4rem,3vw,2.1rem);text-align:center;margin:.3em auto 8px;color:var(--bg);}
+.cvb .sub{text-align:center;color:#5a6a82;font-size:.95rem;max-width:700px;margin:0 auto 40px;}
+.cvb-col{max-width:1080px;margin:0 auto 44px;}
+.cvb-col h3{font-size:1.15rem;color:var(--bg);margin:0 0 6px;display:flex;align-items:center;gap:10px;}
+.cvb-col h3 .tag{background:var(--gold);color:var(--bg);font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:14px;letter-spacing:.05em;}
+.cvb-col .tagline{color:#5a6a82;font-size:.9rem;margin:0 0 18px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;}
+.item{background:#fafcff;border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:12px;align-items:flex-start;}
+.item .dot{width:34px;height:34px;border-radius:10px;flex:0 0 34px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.95rem;}
+.item .ct{color:var(--bg);font-weight:800;font-size:.92rem;margin:0 0 3px;}
+.item .cd{color:#5a6a72;font-size:.85rem;margin:0;}
+.item .vs{color:var(--red);font-weight:800;font-size:.86rem;margin-bottom:3px;}
+.b.ben{margin-left:auto;margin-right:auto;}
+.roi{background:linear-gradient(135deg,#0b1d32,#1b2e4d);color:#fff;padding:56px 24px;}
+.roi .sec-t{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;font-weight:800;text-align:center;}
+.roi h2{font-size:clamp(1.5rem,3vw,2.2rem);text-align:center;margin:.3em auto .5em;}
+.roi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;max-width:1080px;margin:24px auto 0;}
+.roi-card{text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:30px 18px;}
+.roi-card .v{font-size:2rem;font-weight:900;color:#fff;}
+.roi-card .v span{color:var(--gold);}
+.roi-card .l{color:rgba(255,255,255,.75);font-size:.86rem;margin-top:6px;font-weight:600;}
+.final{background:linear-gradient(135deg,#0b1d32,#14243a);color:#fff;text-align:center;padding:64px 24px;}
+.final h2{font-size:clamp(1.6rem,3.4vw,2.5rem);max-width:820px;margin:.2em auto .5em;}
+.final p{color:rgba(255,255,255,.85);max-width:640px;margin:0 auto 30px;font-size:1.05rem;}
+.final .btn{font-size:1.15rem;padding:17px 40px;}
+footer{background:var(--bg2);color:rgba(255,255,255,.55);text-align:center;padding:22px;font-size:.82rem;}
+.f{margin-bottom:14px;}
+.f label{display:block;font-weight:600;font-size:.9rem;color:#23344d;margin-bottom:6px;}
+.inp{width:100%;padding:12px;border:2px solid var(--line);border-radius:9px;font-size:.95rem;font-family:inherit;}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="brand">
+      <img src="logo.png" alt="SolutionPartner.AI">
+      <div class="nm">AI STRATEGY <span>&amp;</span> AUTOMATION · <span>SolutionPartner</span>.AI</div>
+    </div>
+    <div class="badge">TELEFONISTA DIGITAL · RESERVES I CITES PER VEU</div>
+    <h1>Sonava el telèfon... <span class="hl">i no hi havia ningú.</span></h1>
+    <p class="lead">Truquen per reservar i la trucada cau al buit. El client penja, truca al competidor, i una reserva — diners segurs — se'n va al carrer.</p>
+    <p class="num">Un <b>70% dels clients</b> que no els contestes a la primera, no tornen a trucar. Ara la teva telefonista contesta sempre: <b>parla com una persona, fa la reserva sola, i no descansa mai.</b></p>
+    <div class="cta-bar">
+      <a class="btn" href="#demo">Escolta-la →</a>
+      <a class="btn2" href="#beneficis">Per què amb nosaltres</a>
+    </div>
+  </div>
+</section>
+
+<!-- DOLOR -->
+<section class="pain" id="dolor">
+  <div class="wrap">
+    <div class="sec-t">El problema amagat</div>
+    <h2>Quan no contestes, no perds una trucada: perds un client sencer</h2>
+    <div class="pain-cards">
+      <div class="pcard">
+        <div class="ic">📵</div>
+        <h3>Trucades perdudes a hores clau</h3>
+        <div class="loss">Fins a 1 de cada 3</div>
+        <p>A l'hora del dinar, a la nit, al cap de setmana, quan ets sol. La trucada que no agafes és una reserva que se'n va al restaurant del costat.</p>
+      </div>
+      <div class="pcard">
+        <div class="ic">⏱</div>
+        <h3>Minuts eterns per una simple reserva</h3>
+        <div class="loss">3-5 min per trucada</div>
+        <p>Anotar nom "a veure, com es diu...", buscar l'agenda, confirmar l'hora, repetir el telèfon. Cada trucada et treu hores que podries dedicar als que ja són a taula.</p>
+      </div>
+      <div class="pcard">
+        <div class="ic">📓</div>
+        <h3>Agenda a paper i a la memòria</h3>
+        <div class="loss">30% de no-shows</div>
+        <p>Sense confirmació automàtica, els clients s'obliden de la cita. Taules buides que pagaries iguals i hores de feina perdudes.</p>
+      </div>
+      <div class="pcard">
+        <div class="ic">😤</div>
+        <h3>El client que es cansa d'esperar</h3>
+        <div class="loss">2 trucades i marxen</div>
+        <p>També tens clients que truquen després de les 22h, o pregunten el mateix de sempre: hores, on som, telèfons. Resposta ràpida = més clients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUCIO + DEMO -->
+<section class="sol" id="demo">
+  <div class="wrap">
+    <div class="sec-t">La nostra solució</div>
+    <h2>La teva telefonista digital: contesta, parla i reserva com una persona</h2>
+    <p class="lead">Sona una trucada, contesta amb una veu que sembla real, entén al client, comprova la disponibilitat i fa la reserva o la cita. Tot sol. Sempre. 24/7.</p>
+
+    <!-- simulador de trucada amb audio -->
+    <div class="callbox">
+      <div class="phone"><div class="pico">☎</div><div><div class="ptit">Trucada entrant a la teva telefonista</div><div class="pst">Reserva per veu · 0 segons d'espera</div></div></div>
+      <div id="chat">
+        <div class="msg">📲 Client: "Hola, volia fer una reserva per a dos avui a les 21?"</div>
+        <div class="msg" style="color:#fff;">🗣️ Telefonista: "Bones tardes, gràcies per trucar a Can Cuscó. A les 9, tenim taula per a dos. Em pot confirmar el nom, si us plau?"</div>
+        <div class="msg client">📲 Client: "Sí, Òscar."</div>
+        <div class="msg" style="color:#fff;">🗣️ Telefonista: "Perfecte, Òscar. Reserva a les 9 per a dos. Li enviem la confirmació per WhatsApp. Fins aviat!"</div>
+      </div>
+      <button class="playbtn" onclick="document.getElementById('audioDemo').play();this.disabled=true;">▶ Escolta la trucada real <small>(veu generada amb IA)</small></button>
+      <audio id="audioDemo" src="demo-trucada.mp3" preload="none"></audio>
+      <div class="hint">Veu d'exemple generada amb IA · la teva aniria en català/castellà i amb el to del teu negoci</div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Contesta sempre</h3><p>Sonin quan soni: hora punta, nit, festiu, cap de setmana. Cap trucada més perduda.</p></div>
+      <div class="step"><div class="n">2</div><h3>Entén i parla natural</h3><p>Una conversa fluida en català o castellà. El client no nota que és una màquina — sembla una persona de l'equip.</p></div>
+      <div class="step"><div class="n">3</div><h3>Fa la reserva sola</h3><p>Comprova la disponibilitat, reserva o la cita, i confirma per veu i per WhatsApp.</p></div>
+      <div class="step"><div class="n">4</div><h3>Gestiona i recorda</h3><p>Canvis, cancel·lacions i records automàtics. Adéu no-shows, adéu taules buides.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CVB -->
+<section class="cvb">
+  <div class="wrap">
+    <div class="sec-t">Per què ens triaries</div>
+    <h2>Això és el que té la nostra telefonista</h2>
+    <p class="sub">Desglossat com ho hauries de veure abans de decidir: què fa, per què és millor, i què hi guanyes contractant-nos a nosaltres.</p>
+
+    <!-- CARACTERÍSTIQUES -->
+    <div class="cvb-col">
+      <h3><span class="tag">CARACTERÍSTIQUES</span> Què fa la telefonista</h3>
+      <p class="tagline">Les peces que la fan real, no un contestador.</p>
+      <div class="grid">
+        <div class="item"><div class="dot" style="background:#e7c47d;">1</div><div><div class="ct">Veu natural amb IA</div><div class="cd">Parla amb to i naturalitat; el client no nota que és una màquina.</div></div></div>
+        <div class="item"><div class="dot" style="background:#e7c47d;">2</div><div><div class="ct">Reserves i cites per veu</div><div class="cd">Agafa la trucada, comprova disponibilitat i reserva el pla o la cita directament.</div></div></div>
+        <div class="item"><div class="dot" style="background:#e7c47d;">3</div><div><div class="ct">Integrada amb l'agenda</div><div class="cd">Connectada amb Google Calendar o el teu sistema de reserves, al dia i sense dobles.</div></div></div>
+        <div class="item"><div class="dot" style="background:#e7c47d;">4</div><div><div class="ct">Confirmació automàtica</div><div class="cd">Envia la confirmació i els records per WhatsApp i correu, per reduir no-shows.</div></div></div>
+        <div class="item"><div class="dot" style="background:#e7c47d;">5</div><div><div class="ct">Canvis i cancel·lacions</div><div class="cd">Gestiona repicaments, canvis d'hora i cancel·lacions parlant amb el client.</div></div></div>
+        <div class="item"><div class="dot" style="background:#e7c47d;">6</div><div><div class="ct">Respon preguntes freqüents</div><div class="cd">Hores, on som, telèfons, preus... contesta el que es repeteix, sense teletreball de ningú.</div></div></div>
+        <div class="item"><div class="dot" style="background:#e7c47d;">7</div><div><div class="ct">Catalana i castellana</div><div class="cd">Parla en la llengua del teu client, amb la seva naturalitat.</div></div></div>
+        <div class="item"><div class="dot" style="background:#e7c47d;">8</div><div><div class="ct">Funciona 24/7</div><div class="cd">No l'agafes mai de vacances ni agafa la baixa. Sempre disponible.</div></div></div>
+      </div>
+    </div>
+
+    <!-- AVANTATGES -->
+    <div class="cvb-col">
+      <h3><span class="tag">AVANTATGES</span> Per què és millor que les alternatives</h3>
+      <p class="tagline">No és un contestador, ni una app que el client ha de saber usar.</p>
+      <div class="grid">
+        <div class="item"><div class="dot" style="background:#0b1d32;color:#fff;">✓</div><div><div class="ct">Contesta el telèfon que ja tens</div><div class="cd">El client truca al número de sempre. No cal que descarregui res ni que busqui un botó.</div></div></div>
+        <div class="item"><div class="dot" style="background:#0b1d32;color:#fff;">✓</div><div><div class="vs">VS contestador automàtic</div><div class="cd">El contestador diu "deixi el missatge" i el client penja. Aquesta parla, entén i FA la reserva.</div></div></div>
+        <div class="item"><div class="dot" style="background:#0b1d32;color:#fff;">✓</div><div><div class="ct">Reserva acabada, no agenda a mitges</div><div class="cd">La trucada acaba amb la reserva feta i confirmada, no amb una nota apedaçada.</div></div></div>
+        <div class="item"><div class="dot" style="background:#0b1d32;color:#fff;">✓</div><div><div class="vs">VS botiga online de reserves</div><div class="cd">No tothom sap o vol reservar per una web. Per telèfon, ho fa tothom, sobretot el client més gran.</div></div></div>
+        <div class="item"><div class="dot" style="background:#0b1d32;color:#fff;">✓</div><div><div class="ct">Cobra el que et dona</div><div class="cd">Cada trucada pot acabar en una reserva pagada. L'automatització treballa per tu, no com un cost.</div></div></div>
+        <div class="item"><div class="dot" style="background:#0b1d32;color:#fff;">✓</div><div><div class="vs">VS contractar més personal</div><div class="cd">Contestar tardes, caps de setmana i hores punta sense contractar ni formar ningú més.</div></div></div>
+      </div>
+    </div>
+
+    <!-- BENEFICIS -->
+    <div class="cvb-col" id="beneficis">
+      <h3><span class="tag">BENEFICIS</span> Què hi guanyes contractant-ho amb nosaltres</h3>
+      <p class="tagline">No et deixem una eina a mitges: t'ho deixem funcionant i adaptat al teu negoci.</p>
+      <div class="grid">
+        <div class="item"><div class="dot" style="background:#e7c47d;">★</div><div><div class="ct">A mida del teu negoci</div><div class="cd">La veu, el to i les frases adaptades al teu servei — restaurant, barberia, clínica, assessoria. No un robo genèric.</div></div></div>
+        <div class="item"><div class="dot" style="background:#e7c47d;">★</div><div><div class="ct">Muntat i provat per nosaltres</div><div class="cd">Et deixem la telefonista funcionant amb la teva agenda, no un manual perquè la muntis tu.</div></div></div>
+        <div class="item"><div class="dot" style="background:#e7c47d;">★</div><div><div class="ct">Sense tokens que es gastin a dojo</div><div class="cd">Dissenyat perquè el cost per trucada sigui mínim i previsible, no un degoteig que et sorprèn.</div></div></div>
+        <div class="item"><div class="dot" style="background:#e7c47d;">★</div><div><div class="ct">Integrada amb el que ja tens</div><div class="cd">Google Calendar, la teva web, el teu WhatsApp. Funciona amb allò que ja uses.</div></div></div>
+        <div class="item"><div class="dot" style="background:#e7c47d;">★</div><div><div class="ct">Un únic interlocutor</div><div class="cd">Tractes amb nosaltres de cap a cap: muntatge, ajustos i millores. Sense intermediaris.</div></div></div>
+        <div class="item"><div class="dot" style="background:#e7c47d;">★</div><div><div class="ct">S'adapta i millora</div><div class="cd">Si el teu negoci canvia (horaris, preus, serveis), la telefonista s'actualitza amb tu.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI -->
+<section class="roi" id="roi">
+  <div class="wrap">
+    <div class="sec-t">El retorn</div>
+    <h2>Deixa de perdre trucades. Comença a guanyar reserves.</h2>
+    <div class="roi-grid">
+      <div class="roi-card"><div class="v">100<span>%</span></div><div class="l">De trucades contestades, mai més es perden</div></div>
+      <div class="roi-card"><div class="v">-30<span>%</span></div><div class="l">De no-shows amb els records automàtics</div></div>
+      <div class="roi-card"><div class="v">&gt;3<span>x</span></div><div class="l">El teu retorn en menys de 6 mesos</div></div>
+      <div class="roi-card"><div class="v">24/7</div><div class="l">Treballant per tu fins i tot mentre tanques</div></div>
+    </div>
+    <p style="text-align:center;color:rgba(255,255,255,.75);font-size:.9rem;max-width:720px;margin:28px auto 0;">Cada trucada que contesta és una reserva que no se'n va al competidor. Cada reserva confirmada és una taula plena i una cita segura.</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final" id="contracte">
+  <div class="wrap">
+    <h2>Posa una telefonista que no descansa mai.</h2>
+    <p>Et fem una demostració amb la teva veu i el teu negoci. Truca, reserva, sent com sona de real.</p>
+    <div class="cta-bar">
+      <a class="btn" href="#rf">Demanar la demostració →</a>
+      <a class="btn2" href="#demo">Torna a escoltar-la</a>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD CAPTURE -->
+<section class="pain" id="rf">
+  <div class="wrap" style="max-width:720px;">
+    <div class="sec-t" style="color:var(--bg)">Sense compromís</div>
+    <h2 style="color:var(--bg)">Escolta la teva telefonista</h2>
+    <p style="text-align:center;color:#4a5a72;font-size:.95rem;margin-bottom:24px;">Deixa'ns les teves dades i et muntem una demostració de la trucada amb el teu negoci.</p>
+    <form onsubmit="return capturaLead(event)">
+      <div class="f"><label>Empresa</label><input class="inp" name="empresa" required></div>
+      <div class="f"><label>Sector</label><select class="inp" name="sector" required><option value="">Selecciona... </option><option>Restauració</option><option>Salut i bellesa</option><option>Serveis professionals</option><option>Assessories i despatxos</option><option>Altres</option></select></div>
+      <div class="f"><label>Persona de contacte</label><input class="inp" name="nom" required></div>
+      <div class="f"><label>Telèfon</label><input class="inp" name="telefon" required></div>
+      <div class="f"><label>Correu electrònic</label><input class="inp" type="email" name="email" required></div>
+      <button class="btn" type="submit" style="width:100%;margin-top:8px;">Muntar-me la demostració →</button>
+      <p style="font-size:.78rem;color:#6a7a92;text-align:center;margin-top:12px;">Dades tractades segons RGPD. Res fora del teu abast.</p>
+    </form>
+    <div id="ok" style="display:none;text-align:center;padding:24px;background:#eaf6ea;border:1px solid #2e7d32;border-radius:14px;margin-top:16px;font-weight:600;color:#2e7d32;">✓ Rebut! Et muntem la demostració aviat.</div>
+  </div>
+</section>
+
+<footer>© 2026 SolutionPartner.AI · AI Strategy &amp; Automation · Marquem la diferència important del teu negoci</footer>
+
+<script>
+async function capturaLead(e){e.preventDefault();
+  const f=e.target, d=Object.fromEntries(new FormData(f).entries());
+  d.origen="landing telefonista"; d.kind="lead";
+  let ok=false;
+  try{const r=await fetch('/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});ok=r.ok;}catch(err){ok=false;}
+  document.getElementById('ok').style.display='block';
+  f.style.display='none';return false;
+}
+</script>
+</body>
+</html>
